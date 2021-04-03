@@ -27,7 +27,7 @@ router.post(
     //  console.log(req.body); //this is the object of data which will be send to route
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      res.status(400).json({ errors: errors.array() });
+      return res.status(400).json({ errors: errors.array() });
     }
 
     // the data which we send in req is in req.body, here we are destructuring it to separate them
